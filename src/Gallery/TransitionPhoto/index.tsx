@@ -1,11 +1,7 @@
 import { useMemo, useRef, useLayoutEffect, useState } from 'react';
-
 import cl from 'classnames';
-
 import { Photo, CommonClassProps } from '../types';
-
 import style from './index.module.scss';
-
 interface TransitionPhotoProps extends CommonClassProps {
     photos: Photo[];
     indexActivePhoto: number;
@@ -63,7 +59,7 @@ export const TransitionPhoto: React.FC<TransitionPhotoProps> = ({
     photos,
     indexActivePhoto,
 }) => {
-    const [ prevActiveIndexPhoto, setPrevActiveIndexPhoto ] = useState(indexActivePhoto);
+    const [prevActiveIndexPhoto, setPrevActiveIndexPhoto] = useState(indexActivePhoto);
     const containerRef = useRef<HTMLDivElement | null>(null);
 
     useLayoutEffect(() => {
@@ -82,7 +78,7 @@ export const TransitionPhoto: React.FC<TransitionPhotoProps> = ({
         }
 
         setPrevActiveIndexPhoto(indexActivePhoto);
-    }, [ indexActivePhoto ]);
+    }, [indexActivePhoto]);
 
     return useMemo(() => (
         <div
