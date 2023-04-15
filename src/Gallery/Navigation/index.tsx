@@ -1,9 +1,6 @@
 import cl from 'classnames';
-
 import { CommonClassProps } from '../types';
-
 import style from './index.module.scss';
-
 interface NavigationProps extends CommonClassProps {
     disabledPrev?: boolean;
     disabledNext?: boolean;
